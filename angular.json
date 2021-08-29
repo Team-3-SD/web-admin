@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "adminpro": {
+    "web-admin": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/adminpro",
+            "outputPath": "dist/web-admin",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "adminpro:build"
+            "browserTarget": "web-admin:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "adminpro:build:production"
+              "browserTarget": "web-admin:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "adminpro:build"
+            "browserTarget": "web-admin:build"
           }
         },
         "test": {
@@ -110,18 +110,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "adminpro:serve"
+            "devServerTarget": "web-admin:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "adminpro:serve:production"
+              "devServerTarget": "web-admin:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "adminpro",
+  "defaultProject": "web-admin",
   "cli": {
     "analytics": false
   }
