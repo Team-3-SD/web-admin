@@ -1,0 +1,137 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Producto</h4>
+        <h6 class="card-subtitle">Agregar producto</h6>
+
+        <form
+          action=""
+          class="form-horizontal p-t-20"
+          [formGroup]="productoForm"
+          (submit)="guardarProduct()"
+        >
+          <div class="row">
+            <div class="col">
+              <div class="form-group row">
+                <label for="name" class="col-sm-4 control-label">
+                  Nombre
+                </label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      formControlName="nombre"
+                      class="form-control"
+                      id="name"
+                      placeholder="Nombre del producto"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="brand" class="col-sm-4 control-label">Marca</label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <select class="form-control" formControlName="brand">
+                      <option value="">Seleccione Marca</option>
+                      <option *ngFor="let brand of brands" [value]="brand.id">
+                        {{ brand.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="price" class="col-sm-4 control-label">
+                  Precio
+                </label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      formControlName="price"
+                      class="form-control"
+                      id="price"
+                      placeholder="10.0"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="stock" class="col-sm-4 control-label">
+                  Stock
+                </label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      formControlName="stock"
+                      class="form-control"
+                      id="stock"
+                      placeholder="10"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="description" class="col-sm-4 control-label">
+                  Descripcion
+                </label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <textarea
+                      type="textarea"
+                      formControlName="description"
+                      class="form-control"
+                      id="description"
+                      placeholder="Escriba una descripcion"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="checkbox"
+                  id="state"
+                  class="form-check-input"
+                  (change)="onCheckboxChange($event)"
+                />
+                <label for="state" class="form-check-label"> Estado </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group row">
+                <label for="imagen" class="col-sm-4 control-label">Foto</label>
+                <div class="col-sm-8">
+                  <div>
+                    <img [src]="imagenDefault" class="w200" />
+                  </div>
+                  <input
+                    type="file"
+                    (change)="cambiarImagen($event.target.files[0])"
+                  />
+                </div>
+              </div>
+              <div class="form-group row m-b-0">
+                <div class="offset-sm-3 col-sm-9">
+                  <button
+                    type="submit"
+                    [disabled]="productoForm.invalid"
+                    class="btn btn-success waves-effect waves-light"
+                  >
+                    <i class="fa fa-save"></i>
+                    Guardar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

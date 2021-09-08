@@ -12,6 +12,10 @@ import { PerfilComponent } from './perfil/perfil.component';
 // Mantenimientos
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { ProductosComponent } from './mantenimientos/productos/productos.component';
+import { MarcasComponent } from './mantenimientos/marcas/marcas.component';
+import { NuevoProductoComponent } from './mantenimientos/nuevo-producto/nuevo-producto.component';
+import { NuevaMarcaComponent } from './mantenimientos/nueva-marca/nueva-marca.component';
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
@@ -55,17 +59,37 @@ const childRoutes: Routes = [
   {
     path: 'clinicas',
     component: HospitalesComponent,
-    data: { titulo: 'Matenimiento de Clinicas' },
+    data: { titulo: 'Mantenimiento de Clinicas' },
+  },
+  {
+    path: 'productos',
+    component: ProductosComponent,
+    data: { titulo: 'Mantenimiento de Productos' },
+  },
+  {
+    path: 'marcas',
+    component: MarcasComponent,
+    data: { titulo: 'Mantenimiento de Marcas' },
+  },
+  {
+    path: 'nuevo-productos',
+    component: NuevoProductoComponent,
+    data: { titulo: 'Agregar producto' },
+  },
+  {
+    path: 'nueva-marca',
+    component: NuevaMarcaComponent,
+    data: { titulo: 'Agregar marca' },
   },
   {
     path: 'medicos',
     component: MedicosComponent,
-    data: { titulo: 'Matenimiento de Medicos' },
+    data: { titulo: 'Mantenimiento de Medicos' },
   },
   {
     path: 'medico/:id',
     component: MedicoComponent,
-    data: { titulo: 'Matenimiento de Medicos' },
+    data: { titulo: 'Mantenimiento de Medicos' },
   },
 
   // Rutas de Admin

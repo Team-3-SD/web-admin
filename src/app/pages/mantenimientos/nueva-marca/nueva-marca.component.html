@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Marca</h4>
+        <h6 class="card-subtitle">Agregar marca</h6>
+
+        <form
+          action=""
+          class="form-horizontal p-t-20"
+          [formGroup]="marcaForm"
+          (submit)="guardarMarca()"
+        >
+          <div class="row">
+            <div class="col">
+              <div class="form-group row">
+                <label for="name" class="col-sm-4 control-label">
+                  Nombre
+                </label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      formControlName="nombre"
+                      class="form-control"
+                      id="name"
+                      placeholder="Nombre de la marca"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row m-b-0">
+                <div class="offset-sm-3 col-sm-9">
+                  <button
+                    type="submit"
+                    [disabled]="marcaForm.invalid"
+                    class="btn btn-success waves-effect waves-light"
+                  >
+                    <i class="fa fa-save"></i>
+                    Guardar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
