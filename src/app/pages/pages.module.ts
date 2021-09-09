@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 // Modulos
 import { SharedModule } from '../shared/shared.module';
@@ -22,10 +23,10 @@ import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.comp
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
-
-
-
-
+import { ProductosComponent } from './mantenimientos/productos/productos.component';
+import { MarcasComponent } from './mantenimientos/marcas/marcas.component';
+import { NuevoProductoComponent } from './mantenimientos/nuevo-producto/nuevo-producto.component';
+import { NuevaMarcaComponent } from './mantenimientos/nueva-marca/nueva-marca.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,10 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     PerfilComponent,
     UsuariosComponent,
     HospitalesComponent,
+    ProductosComponent,
+    NuevoProductoComponent,
+    NuevaMarcaComponent,
+    MarcasComponent,
     MedicosComponent,
     MedicoComponent,
     BusquedaComponent,
@@ -48,16 +53,17 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
   ],
-  imports: [ 
+  imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
     RouterModule,
     ComponentsModule,
-    PipesModule
-  ]
+    PipesModule,
+    BrowserModule,
+  ],
 })
-export class PagesModule { }
+export class PagesModule {}
